@@ -2,7 +2,7 @@
  * Blocks for driving the Kitronik I2C 16-Servo Driver Board
  * 回転方向反転 + パルス調整用
  */
-//% weight=150 color=#de3b09 icon="\uf085" block="THK"
+//% weight=150 color=#de3b09 icon="\uf085" block="THK教材"
 
 namespace THK {
 

@@ -1,23 +1,27 @@
 
 namespace THK {
-//% blockId=P8_Pullup
-//% block="P8をプルアップ"
+
+ export enum SensorS {
+        P8 = 8,
+        P13 = 13,
+    }
+
+//% blockId=thk_Pullup
+//% block="センサ %SensorS|をプルアップ"
 //% group="センサ"
-export function P8_PullUp(): void {
-    THK.サーボモータ(THK.Servos.モータ1, 0)
-    THK.サーボモータ(THK.Servos.モータ2, 0)
-    THK.サーボモータ(THK.Servos.モータ3, 0)
+    export function P8_PullUp(Sensor: SensorS): void {
+    
 }
 
 /**
    * P8
    * @param format number format, eg: OutputNumberFormat.INTEGER
    */
-//% blockId=P8
-//% block="P8"
+//% blockId=thk_analogread
+//% block="センサ %SensorS|の状態""
 //% group="センサ"
-//% weight=100
-export function getDistance2(format: OutputNumberFormat = OutputNumberFormat.INTEGER): number {
+//% weight=100 color=#800000 icon="\uf085"
+    export function getDistance2(Sensor: SensorS,format: OutputNumberFormat = OutputNumberFormat.INTEGER): number {
     return pins.digitalReadPin(DigitalPin.P8);
 }
 }
