@@ -175,5 +175,23 @@ namespace THK {
         pins.i2cWriteBuffer(ChipAddress, buf, false)
     }
 
+   
+
+    /**
+     * Pause for the specified time in milliseconds
+     * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
+     */    
+    //% help=basic/pause weight=54
+    //% async block="pause (ms) %pause" blockGap=16
+    //% blockId=device_pause icon="\uf110"
+    //% pause.shadow=timePicker
+    //% group="基本"
+
+    export function pause(ms: number): void {
+        basic.pause(ms);
+    }
 
 }
+
+
+

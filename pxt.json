@@ -15,7 +15,8 @@
         "README.md",
         "thk.ts",
         "thk_sensor.ts",
-        "thk_neopixel.ts"
+        "thk_neopixel.ts",
+        "thk_melody.ts"
     ],
     "testFiles": [
         "test.ts"
