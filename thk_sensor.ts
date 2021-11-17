@@ -2,8 +2,9 @@
 namespace THK {
 
  export enum SensorS {
-        P8 = 8,
-        P13 = 13,
+        P1 = DigitalPin.P1,
+        P8 = DigitalPin.P8,
+        P13 = DigitalPin.P13,
     }
 
 //% blockId=thk_Pullup

@@ -1,1 +1,1 @@
-<xml xmlns="https://developers.google.com/blockly/xml"/>
+<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id="Ztkw]wseA*LdUj:qamUQ" x="0" y="0"/><block type="thk_analogread" id="zMO^n$3.MhJKt2z=!{1(" disabled="true" x="45" y="188"><field name="SensorS">THK.SensorS.P8</field></block></xml>

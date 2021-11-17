@@ -9,7 +9,7 @@ namespace THK {
 
     }
     //% blockId=thk_NeoPixel_Setting
-    //% block="LEDの初期設定(変数：strip,P10,LED24個,RGBモード)"
+    //% block="LEDの初期設定(変数：strip,P2,LED10個,RGBモード)"
     //% group="LED"
     //% weight=100 color=#2699BF icon="\uf085"
     export function P8_Pullp(Sensor: SensorS): void {
