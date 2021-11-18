@@ -8,7 +8,6 @@ namespace THK {
     //% group="LED"
     //% weight=100 color=#2699BF icon="\uf085"
     export function thk_NeoPixel_OFF(): void {
-        let strip = neopixel.create(DigitalPin.P2, 10, NeoPixelMode.RGB)
         strip.showColor(neopixel.colors(NeoPixelColors.Black))
     }
 
@@ -17,7 +16,6 @@ namespace THK {
     //% group="LED"
     //% weight=100 color=#2699BF icon="\uf085"
     export function thk_NeoPixel_Light(Color: NeoPixelColors): void {
-        let strip = neopixel.create(DigitalPin.P2, 10, NeoPixelMode.RGB)
         strip.showColor(neopixel.colors(Color))
     }
     
