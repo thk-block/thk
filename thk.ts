@@ -23,9 +23,9 @@ namespace THK {
 
     //nice big list of servos for the block to use. These represent register offsets in the PCA9865
     export enum Servos {
-        モータ1 = 0x08,
-        モータ2 = 0x0C,
-        モータ3 = 0x10,
+        SV1= 0x08,
+        SV2 = 0x0C,
+        SV3 = 0x10,
         /*SV4 = 0x14,
         SV5 = 0x18,
         SV6 = 0x1C,
@@ -124,13 +124,13 @@ namespace THK {
  * モータ1～3をまとめて0度にする
  */
     export function LebelTheTable(): void {
-        THK.サーボモータ(THK.Servos.モータ1, 0)
-        THK.サーボモータ(THK.Servos.モータ2, 0)
-        THK.サーボモータ(THK.Servos.モータ3, 0)
+        THK.thk_servo(THK.Servos.SV1, 0)
+        THK.thk_servo(THK.Servos.SV2, 0)
+        THK.thk_servo(THK.Servos.SV3, 0)
     }
 
     //% blockId=Kitronik_servo
-    //% block="%Servo|を %degrees|度にする"
+    //% block="モータ%Servo|を %degrees|度にする"
     //% group="サーボモータ"
     //% degrees.min=-90 degrees.max=90
     /**
@@ -138,7 +138,7 @@ namespace THK {
  * 筐体正面から見て時計周りが「+」、半時計周りが「-」
  * @param degrees describe parameter here, eg: 0
  */
-    export function サーボモータ(Servo: Servos, degrees: number): void {
+    export function thk_servo(Servo: Servos, degrees: number): void {
         if (initalised == false) {
             secretIncantation()
         }
