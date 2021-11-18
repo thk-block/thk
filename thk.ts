@@ -1,6 +1,6 @@
 /**
- * Blocks for driving the Kitronik I2C 16-Servo Driver Board
- * 回転方向反転 + パルス調整用
+ * 「Kitronik I2C 16-Servo Driver Board」の教材用カスタムブロック
+ *　回転方向反転、角度調整、パルス調整
  */
 //% weight=150 color=#de3b09 icon="\uf085" block="THK教材"
 
@@ -118,7 +118,7 @@ namespace THK {
     }
 
     //% blockId=level_all
-    //% block="全てのスロープを水平にする"
+    //% block="全てのスロープを水平（0度）にする"
     //% group="サーボモータ"
     /**
  * モータ1～3をまとめて0度にする

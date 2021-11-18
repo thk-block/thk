@@ -6,7 +6,6 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "stem": "github:tfabworks/pxt-stem#v2.3.1",
         "neopixel": "github:microsoft/pxt-neopixel#v0.7.3"
     },
     "files": [
@@ -28,5 +27,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
