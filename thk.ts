@@ -23,10 +23,11 @@ namespace THK {
 
     //nice big list of servos for the block to use. These represent register offsets in the PCA9865
     export enum Servos {
-        SV1= 0x08,
-        SV2 = 0x0C,
-        SV3 = 0x10,
-        /*SV4 = 0x14,
+        Motor1= 0x08,
+        Motor2 = 0x0C,
+        Motor3 = 0x10,
+        /**
+        SV4 = 0x14,
         SV5 = 0x18,
         SV6 = 0x1C,
         SV7 = 0x20,
@@ -124,9 +125,9 @@ namespace THK {
  * モータ1～3をまとめて0度にする
  */
     export function LebelTheTable(): void {
-        THK.thk_servo(THK.Servos.SV1, 0)
-        THK.thk_servo(THK.Servos.SV2, 0)
-        THK.thk_servo(THK.Servos.SV3, 0)
+        THK.thk_servo(THK.Servos.Motor1, 0)
+        THK.thk_servo(THK.Servos.Motor2, 0)
+        THK.thk_servo(THK.Servos.Motor3, 0)
     }
 
     //% blockId=Kitronik_servo
