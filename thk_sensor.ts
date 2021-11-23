@@ -67,7 +67,7 @@ namespace THK {
     //% blockId=is_thk_digitalread
     //% block="センサ %SensorS|がオン""
     //% group="センサ"
-    //% weight=100 color=#006400 icon="\uf085"
+    //% weight=100 color=#008000 icon="\uf085"
     export function is_getDigitalSensor(Sensor: SensorS): boolean {
         switch (Sensor) {
             case 1:
