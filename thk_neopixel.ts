@@ -19,7 +19,7 @@ namespace THK {
         strip.showColor(neopixel.colors(Color))
     }
     
-     
+     /**
     //% blockId=thk_NeoPixel_Setting
     //% block="LEDの初期設定(変数：strip,P2,LED10個,RGBモード)"
     //% group="LED"
@@ -29,5 +29,6 @@ namespace THK {
         let strip = neopixel.create(DigitalPin.P2, 10, NeoPixelMode.RGB)
 
     }
-    
+*/
+
 }
