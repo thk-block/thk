@@ -11,7 +11,7 @@ namespace THK {
     //% blockId=thk_kyouzai_setup
     //% block="教材LEDとセンサの初期設定"
     //% group="初期設定"
-    //% weight=100 color=#ff8c00 icon="\uf085"
+    //% weight=100 color=#c71585 icon="\uf085"
     export function thk_kyouzai_setup(): void {
                 pins.setPull(DigitalPin.P1, PinPullMode.PullUp)
                 pins.setPull(DigitalPin.P8, PinPullMode.PullUp)

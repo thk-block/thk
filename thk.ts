@@ -121,7 +121,7 @@ namespace THK {
     //% blockId=level_all
     //% block="全てのスロープを水平（0度）にする"
     //% group="サーボモータ"
-    //% weight=100 color=#8b008b icon="\uf085"
+    //% weight=100 color=#ff8c00 icon="\uf085"
     
     /**
  * モータ1～3をまとめて0度にする
@@ -135,7 +135,7 @@ namespace THK {
     //% blockId=Kitronik_servo
     //% block="モータ%Servo|を %degrees|度にする"
     //% group="サーボモータ"
-    //% weight=100 color=#8b008b icon="\uf085"
+    //% weight=100 color=#ff8c00 icon="\uf085"
     //% degrees.min=-90 degrees.max=90
     /**
  * サーボモータの角度を指定（-90°～+90°)
