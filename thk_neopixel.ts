@@ -5,7 +5,7 @@ namespace THK {
     //% blockId=thk_NeoPixel_OFF2
     //% block="LEDを消灯する"
     //% group="LED"
-    //% weight=105 color=#2699BF icon="\uf085"
+    //% weight=95 color=#2699BF icon="\uf085"
     export function thk_NeoPixel_OFF(): void {
 
                 thk_strip.showColor(neopixel.colors(NeoPixelColors.Black))
@@ -22,7 +22,7 @@ namespace THK {
     //% blockId=thk_NeoPixel_Light
     //% block="LEDを %Color|色に点灯する"
     //% group="LED"
-    //% weight=100 color=#2699BF icon="\uf085"
+    //% weight=110 color=#2699BF icon="\uf085"
     export function thk_NeoPixel_Light(Color: NeoPixelColors): void {
         
         thk_strip.showColor(neopixel.colors(Color))
