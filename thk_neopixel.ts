@@ -1,14 +1,22 @@
-
-let strip = neopixel.create(DigitalPin.P2, 10, NeoPixelMode.RGB)
+let thk_strip = neopixel.create(DigitalPin.P2, 10, NeoPixelMode.RGB)
 
 namespace THK {
-
-    //% blockId=thk_NeoPixel_OFF
+  
+    //% blockId=thk_NeoPixel_OFF2
     //% block="LEDを消灯する"
     //% group="LED"
-    //% weight=100 color=#2699BF icon="\uf085"
+    //% weight=105 color=#2699BF icon="\uf085"
     export function thk_NeoPixel_OFF(): void {
-        strip.showColor(neopixel.colors(NeoPixelColors.Black))
+
+                thk_strip.showColor(neopixel.colors(NeoPixelColors.Black))
+                 }
+
+    //% blockId=thk_NeoPixel_Rainbow
+    //% block="LEDを虹色に点灯する"
+    //% group="LED"
+    //% weight=102 color=#2699BF icon="\uf085"
+    export function thk_NeoPixel_Rainbow(): void {
+        thk_strip.showRainbow(1, 360)
     }
 
     //% blockId=thk_NeoPixel_Light
@@ -16,17 +24,18 @@ namespace THK {
     //% group="LED"
     //% weight=100 color=#2699BF icon="\uf085"
     export function thk_NeoPixel_Light(Color: NeoPixelColors): void {
-        strip.showColor(neopixel.colors(Color))
+        
+        thk_strip.showColor(neopixel.colors(Color))
     }
     
      /**
     //% blockId=thk_NeoPixel_Setting
-    //% block="LEDの初期設定(変数：strip,P2,LED10個,RGBモード)"
+    //% block="LEDの初期設定(変数：thk_strip,P2,LED10個,RGBモード)"
     //% group="LED"
     //% weight=100 color=#2699BF icon="\uf085"
     
     export function thk_NeoPixel_Setting(): void {
-        let strip = neopixel.create(DigitalPin.P2, 10, NeoPixelMode.RGB)
+        let thk_strip = neopixel.create(DigitalPin.P2, 10, NeoPixelMode.RGB)
 
     }
 */

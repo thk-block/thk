@@ -19,8 +19,12 @@ namespace THK {
     let ServoZeroOffset = 0x66
 
     let initalised = false //a flag to allow us to initialise without explicitly calling the secret incantation
-    let keisuu_setting = 80 //旧モータ係数設定用　今は未使用　
-
+    let MP = 0
+    let MotorPosition: int32[] = [] 
+    MotorPosition[1] = 0
+    MotorPosition[2] = 0
+    MotorPosition[3] = 0
+    
     //nice big list of servos for the block to use. These represent register offsets in the PCA9865
     export enum Servos {
         Motor1= 0x08,
@@ -179,7 +183,7 @@ namespace THK {
         pins.i2cWriteBuffer(ChipAddress, buf, false)
     }
 
-   
+
 
     /**
      * Pause for the specified time in milliseconds
@@ -194,7 +198,16 @@ namespace THK {
     export function pause(ms: number): void {
         basic.pause(ms);
     }
-
+    /**
+  * Repeats the code forever in the background. On each iteration, allows other codes to run.
+  * @param body code to execute
+  */
+    //% help=basic/forever weight=53 blockGap=16 blockAllowMultiple=1 afterOnStart=true
+    //% blockId=device_forever block="forever" icon="\uf01e"
+    //% group="基本"
+    export function forever(a: () => void): void {
+        basic.forever(a);
+    }
 }
 
 
