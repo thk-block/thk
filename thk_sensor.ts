@@ -10,7 +10,6 @@ namespace THK {
 
     /**
   * 教材のLEDとセンサの初期設定を行う。
-  * 
   */
     //% blockId=thk_kyouzai_setup
     //% block="教材LEDとセンサの初期設定"

@@ -19,16 +19,15 @@ namespace THK {
     let ServoZeroOffset = 0x66
 
     let initalised = false //a flag to allow us to initialise without explicitly calling the secret incantation
-    let MP = 0
-    let MotorPosition: int32[] = [] 
-    MotorPosition[1] = 0
-    MotorPosition[2] = 0
-    MotorPosition[3] = 0
     
+
     //nice big list of servos for the block to use. These represent register offsets in the PCA9865
     export enum Servos {
+        //% block="モータ1"
         Motor1= 0x08,
+        //% block="モータ2"
         Motor2 = 0x0C,
+        //% block="モータ3"
         Motor3 = 0x10,
         /**
         SV4 = 0x14,
@@ -122,14 +121,15 @@ namespace THK {
         initalised = true
     }
 
+
     //% blockId=level_all
-    //% block="全てのスロープを水平（0度）にする"
+    //% block="全てのスロープを水平（0度）にします"
     //% group="サーボモータ"
     //% weight=100 color=#ff8c00 icon="\uf085"
-    
-    /**
- * モータ1～3をまとめて0度にする
- */
+
+/**
+* モータ1～3をまとめて水平(0度)にする
+*/
     export function LebelTheTable(): void {
         THK.thk_servo(THK.Servos.Motor1, 0)
         THK.thk_servo(THK.Servos.Motor2, 0)
@@ -137,12 +137,12 @@ namespace THK {
     }
 
     //% blockId=Kitronik_servo
-    //% block="モータ%Servo|を %degrees|度にする"
+    //% block="%Servo|を %degrees|度にする"
     //% group="サーボモータ"
     //% weight=100 color=#ff8c00 icon="\uf085"
     //% degrees.min=-90 degrees.max=90
     /**
- * サーボモータの角度を指定（-90°～+90°)
+ * サーボモータの角度を指定します（-90°～+90°)
  * 筐体正面から見て時計周りが「+」、半時計周りが「-」
  * @param degrees describe parameter here, eg: 0
  */
