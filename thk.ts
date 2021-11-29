@@ -121,15 +121,14 @@ namespace THK {
         initalised = true
     }
 
-
+    /**
+ * 全てのスロープ（モータ１～３）を水平（0度）にします。
+ */
     //% blockId=level_all
-    //% block="全てのスロープを水平（0度）に"する"
+    //% block="全てのスロープを水平（0度）にする"
     //% group="サーボモータ"
     //% weight=100 color=#ff8c00 icon="\uf085"
 
-/**
-* モータ1～3をまとめて水平(0度)にする
-*/
     export function LebelTheTable(): void {
         THK.thk_servo(THK.Servos.Motor1, 0)
         THK.thk_servo(THK.Servos.Motor2, 0)
