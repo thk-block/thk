@@ -1,1 +1,1 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="}CRfjBQ1Q,oudQ7siuM8">strip</variable></variables><block type="device_forever" id="m1f{7IKaV?_,f}.B+U=x" x="0" y="0"><statement name="HANDLER"><block type="thk_NeoPixel_Light" id="[Li`3I7|bvf8+*.$yDRX"><field name="Color">THK.thk_led_effect.Rainbow</field></block></statement></block></xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="}CRfjBQ1Q,oudQ7siuM8">strip</variable></variables></xml>
