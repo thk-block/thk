@@ -123,7 +123,7 @@ namespace THK {
 
 
     //% blockId=level_all
-    //% block="全てのスロープを水平（0度）にします"
+    //% block="全てのスロープを水平（0度）に"する"
     //% group="サーボモータ"
     //% weight=100 color=#ff8c00 icon="\uf085"
 
