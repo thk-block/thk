@@ -1,5 +1,5 @@
 {
-    "name": "thk",
+    "name": "test",
     "version": "0.1.6",
     "description": "",
     "dependencies": {
@@ -21,7 +21,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "4.0.16",
+        "target": "5.0.12",
         "targetId": "microbit"
     },
     "supportedTargets": [

@@ -57,6 +57,13 @@ namespace THK {
     // a better trim function that does the maths for the end user could be exposed, the basics are here 
     // for reference
 
+
+        //% blockId=Kitronik_servo
+    //% block="TrimServoMultiplierを%Value|に変更"
+    //% group="サーボモータ"
+    //% weight=100 color=#ff8c00 icon="\uf085"
+    //% Value.min=113 Value.max=226
+
     export function TrimServoMultiplier(Value: number) {
         if (Value < 113) {
             ServoMultiplier = 113
@@ -71,6 +78,13 @@ namespace THK {
 
         }
     }
+
+        //% blockId=Kitronik_servo
+    //% block="TrimServoZeroOffsetを%Value|に変更"
+    //% group="サーボモータ"
+    //% weight=100 color=#ff8c00 icon="\uf085"
+    //% Value.min=102 Value.max=204
+
     export function TrimServoZeroOffset(Value: number) {
         if (Value < 0x66) {
             ServoZeroOffset = 0x66
