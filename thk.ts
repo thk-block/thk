@@ -58,7 +58,7 @@ namespace THK {
     // for reference
 
 
-        //% blockId=Kitronik_servo
+        //% blockId=TrimServoMultiplier
     //% block="TrimServoMultiplierを%Value|に変更"
     //% group="サーボモータ"
     //% weight=100 color=#ff8c00 icon="\uf085"
@@ -79,7 +79,7 @@ namespace THK {
         }
     }
 
-        //% blockId=Kitronik_servo
+        //% blockId=TrimServoZeroOffset
     //% block="TrimServoZeroOffsetを%Value|に変更"
     //% group="サーボモータ"
     //% weight=100 color=#ff8c00 icon="\uf085"
