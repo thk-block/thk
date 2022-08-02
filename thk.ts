@@ -17,7 +17,7 @@ namespace THK {
     //To get the PWM pulses to the correct size and zero offset these are the default numbers. 
     let ServoMultiplier = 226
     let ServoZeroOffset = 0x66
-
+    let Pulse_bairitu = 94
     let initalised = false //a flag to allow us to initialise without explicitly calling the secret incantation
     
 
@@ -99,7 +99,15 @@ namespace THK {
 
         }
     }
+    //% blockId=Pulse
+    //% block="パルス倍率を%Value|に変更"
+    //% group="サーボモータ"
+    //% weight=100 color=#ff8c00 icon="\uf085"
+    //% Value.min=0 Value.max=100
 
+    export function Pulse(Value: number) {
+        Pulse_bairitu = Value
+    }
     /*
         This secret incantation sets up the PCA9865 I2C driver chip to be running at 50Hx pulse repetition, and then sets the 16 output registers to 1.5mS - centre travel.
         It should not need to be called directly be a user - the first servo write will call it.
@@ -173,7 +181,7 @@ namespace THK {
 
         let buf = pins.createBuffer(2)
         let HighByte = false
-        let deg100 = degrees * 94 //元は100
+        let deg100 = degrees * Pulse_bairitu //元は100
         let PWMVal100 = deg100 * ServoMultiplier
         let PWMVal = PWMVal100 / 10000
 
