@@ -17,7 +17,7 @@ namespace THK {
     //To get the PWM pulses to the correct size and zero offset these are the default numbers. 
     let ServoMultiplier = 226
     let ServoZeroOffset = 0x66
-    let Pulse_bairitu = 94
+    let Pulse_bairitu = 85
     let initalised = false //a flag to allow us to initialise without explicitly calling the secret incantation
     
 
