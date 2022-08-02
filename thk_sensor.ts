@@ -46,8 +46,8 @@ namespace THK {
                     return false;
                 }
             case 13:
-                if (pins.digitalReadPin(DigitalPin.P13) == 0) {
-            //現状では0のときオンの仕様なので
+                if (pins.digitalReadPin(DigitalPin.P13) == 1) {
+            //1のときオンに変更
                     return true;
                 } else {
                     return false;
