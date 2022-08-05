@@ -19,7 +19,7 @@ namespace THK {
                 pins.setPull(DigitalPin.P1, PinPullMode.PullUp)
                 pins.setPull(DigitalPin.P8, PinPullMode.PullUp)
                 pins.setPull(DigitalPin.P13, PinPullMode.PullUp)
-        let strip = neopixel.create(DigitalPin.P2, 10, NeoPixelMode.RGB)
+        let strip = neopixel.create(DigitalPin.P2, 6, NeoPixelMode.RGB)
         }
 
     /**
