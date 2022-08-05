@@ -1,4 +1,4 @@
-let thk_strip = neopixel.create(DigitalPin.P2, 10, NeoPixelMode.RGB)
+let thk_strip = neopixel.create(DigitalPin.P2, 6, NeoPixelMode.RGB)
 
 namespace THK {
 
