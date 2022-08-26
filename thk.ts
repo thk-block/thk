@@ -58,12 +58,6 @@ namespace THK {
     // for reference
 
 
-        //% blockId=TrimServoMultiplier
-    //% block="TrimServoMultiplierを%Value|に変更"
-    //% group="サーボモータ"
-    //% weight=100 color=#ff8c00 icon="\uf085"
-    //% Value.min=113 Value.max=226
-
     export function TrimServoMultiplier(Value: number) {
         if (Value < 113) {
             ServoMultiplier = 113
@@ -79,12 +73,6 @@ namespace THK {
         }
     }
 
-        //% blockId=TrimServoZeroOffset
-    //% block="TrimServoZeroOffsetを%Value|に変更"
-    //% group="サーボモータ"
-    //% weight=100 color=#ff8c00 icon="\uf085"
-    //% Value.min=102 Value.max=204
-
     export function TrimServoZeroOffset(Value: number) {
         if (Value < 0x66) {
             ServoZeroOffset = 0x66
@@ -99,12 +87,7 @@ namespace THK {
 
         }
     }
-    //% blockId=Pulse
-    //% block="パルス倍率を%Value|に変更"
-    //% group="サーボモータ"
-    //% weight=100 color=#ff8c00 icon="\uf085"
-    //% Value.min=0 Value.max=100
-
+    
     export function Pulse(Value: number) {
         Pulse_bairitu = Value
     }
@@ -147,7 +130,7 @@ namespace THK {
  * 全てのスロープ（モータ１～３）を水平（0度）にします。
  */
     //% blockId=level_all
-    //% block="全てのスロープを水平（0度）にする"
+    //% block="全てのスロープを水平（０度）にする"
     //% group="サーボモータ"
     //% weight=100 color=#ff8c00 icon="\uf085"
 
@@ -175,8 +158,12 @@ namespace THK {
         degrees = degrees - 90 //-180～0度
         degrees = -degrees //反転（時計周りを＋にするため)
 
-        if (degrees < 5) { //+90°でモータが回転する個体の対策
+        if (degrees < 5) { //角度オーバーでモータが回転する個体の対策
             degrees = 5
+        }
+
+        if (degrees > 175) { //角度オーバーでモータが回転する個体の対策
+            degrees = 175
         }
 
         let buf = pins.createBuffer(2)
