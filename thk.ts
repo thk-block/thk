@@ -23,11 +23,11 @@ namespace THK {
 
     //nice big list of servos for the block to use. These represent register offsets in the PCA9865
     export enum Servos {
-        //% block="モータ１"
+        //% block="SV1"
         Motor1= 0x08,
-        //% block="モータ２"
+        //% block="SV2"
         Motor2 = 0x0C,
-        //% block="モータ３"
+        //% block="SV3"
         Motor3 = 0x10,
         /**
         SV4 = 0x14,
@@ -158,7 +158,7 @@ namespace THK {
     }
 
     //% blockId=Kitronik_servo
-    //% block="%Servo|を %degrees|度にする"
+    //% block="サーボモータ%Servo|を %degrees|度にする"
     //% group="サーボモータ"
     //% weight=100 color=#ff8c00 icon="\uf085"
     //% degrees.min=-90 degrees.max=90
@@ -175,7 +175,11 @@ namespace THK {
         degrees = degrees - 90 //-180～0度
         degrees = -degrees //反転（時計周りを＋にするため)
 
-        if (degrees < 1) { //0°でモータが震えるため
+        if (degrees > 175) { //180度付近で挙動が不安定になる個体があるため
+            degrees = 175
+        }
+
+        if (degrees < 1) { //0°で振動する個体があるため
             degrees = 1
         }
 
