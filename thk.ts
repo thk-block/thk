@@ -17,7 +17,8 @@ namespace THK {
     //To get the PWM pulses to the correct size and zero offset these are the default numbers. 
     let ServoMultiplier = 226
     let ServoZeroOffset = 0x66
-    let Pulse_bairitu = 80
+    let Pulse_Ratio = 80
+    let Motor_OriginAdj = [0, 0, 0]
     let initalised = false //a flag to allow us to initialise without explicitly calling the secret incantation
     
 
@@ -88,9 +89,6 @@ namespace THK {
         }
     }
     
-    export function Pulse(Value: number) {
-        Pulse_bairitu = Value
-    }
     /*
         This secret incantation sets up the PCA9865 I2C driver chip to be running at 50Hx pulse repetition, and then sets the 16 output registers to 1.5mS - centre travel.
         It should not need to be called directly be a user - the first servo write will call it.
@@ -158,17 +156,30 @@ namespace THK {
         degrees = degrees - 90 //-180～0度
         degrees = -degrees //反転（時計周りを＋にするため)
 
+        switch (Servo) {
+            case 0x08: //モータ1
+                degrees += Motor_OriginAdj[0]
+                break;
+            case 0x0C:
+                degrees += Motor_OriginAdj[1]
+                break;
+            case 0x10:
+                degrees += Motor_OriginAdj[2]
+                break;
+            default:
+        }
+
         if (degrees < 5) { //角度オーバーでモータが回転する個体の対策
             degrees = 5
         }
 
-        if (degrees > 175) { //角度オーバーでモータが回転する個体の対策
-            degrees = 175
+        if (degrees > 177) { //角度オーバーでモータが回転する個体の対策
+            degrees = 177
         }
 
         let buf = pins.createBuffer(2)
         let HighByte = false
-        let deg100 = degrees * Pulse_bairitu //元は100
+        let deg100 = degrees * Pulse_Ratio //元は100
         let PWMVal100 = deg100 * ServoMultiplier
         let PWMVal = PWMVal100 / 10000
 
@@ -191,6 +202,44 @@ namespace THK {
         pins.i2cWriteBuffer(ChipAddress, buf, false)
     }
 
+    //% blockId=Kitronik_servo_OriginAdj
+    //% block="%Servo|の原点を %degrees|度ずらす"
+    //% group="サーボモータ"
+    //% weight=100 color=#d2691e icon="\uf085"
+    //% degrees.min=-20 degrees.max=20
+    /**
+ * 指定したサーボモータの原点を調整します（-20°～+20°)
+ * 筐体正面から見て時計周りが「+」、半時計周りが「-」
+ * @param degrees describe parameter here, eg: 0
+ */
+    export function Function_Motor_OriginAdj(Servo: Servos, degrees: number): void {
+        if (initalised == false) {
+            secretIncantation()
+        }
+
+        degrees = degrees - 90 //-180～0度
+        degrees = -degrees //反転（時計周りを＋にするため)
+
+        if (degrees < -20) { 
+            degrees = -20
+        }
+        if (degrees > 20) { 
+            degrees = 20
+        }
+
+        switch (Servo) {
+            case 0x08: //モータ1
+                Motor_OriginAdj[0]= degrees 
+                break;
+            case 0x0C:
+                Motor_OriginAdj[1] = degrees
+                break;
+            case 0x10:
+                Motor_OriginAdj[2] = degrees
+                break;
+            default:
+        }
+    }
 
 
     /**
