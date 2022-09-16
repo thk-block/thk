@@ -153,9 +153,6 @@ namespace THK {
             secretIncantation()
         }
 
-        degrees = degrees - 90 //-180～0度
-        degrees = -degrees //反転（時計周りを＋にするため)
-
         switch (Servo) {
             case 0x08: //モータ1
                 degrees += Motor_OriginAdj[0]
@@ -168,6 +165,9 @@ namespace THK {
                 break;
             default:
         }
+
+        degrees = degrees - 90 //-180～0度
+        degrees = -degrees //反転（時計周りを＋にするため)
 
         if (degrees < 5) { //角度オーバーでモータが回転する個体の対策
             degrees = 5
