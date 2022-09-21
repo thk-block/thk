@@ -1,6 +1,6 @@
 /**
  * 「Kitronik I2C 16-Servo Driver Board」の教材用カスタムブロック
- *　回転方向反転、角度調整、パルス調整
+ *　回転方向反転、角度調整、パルス調整、原点調整追加
  */
 //% weight=150 color=#de3b09 icon="\uf085" block="THK教材"
 
@@ -24,11 +24,11 @@ namespace THK {
 
     //nice big list of servos for the block to use. These represent register offsets in the PCA9865
     export enum Servos {
-        //% block="モータ１"
+        //% block="SV1"
         Motor1= 0x08,
-        //% block="モータ２"
+        //% block="SV2"
         Motor2 = 0x0C,
-        //% block="モータ３"
+        //% block="SV3"
         Motor3 = 0x10,
         /**
         SV4 = 0x14,
@@ -125,10 +125,10 @@ namespace THK {
     }
 
     /**
- * 全てのスロープ（モータ１～３）を水平（0度）にします。
+ * すべてのモータ(SV1~SV3)を0度にします。
  */
     //% blockId=level_all
-    //% block="全てのスロープを水平（０度）にする"
+    //% block="すべてのモータ(SV1~SV3)を0度にする　"
     //% group="サーボモータ"
     //% weight=100 color=#ff8c00 icon="\uf085"
 
@@ -139,7 +139,7 @@ namespace THK {
     }
 
     //% blockId=Kitronik_servo
-    //% block="%Servo|を %degrees|度にする"
+    //% block="モータ %Servo|を %degrees|度にする"
     //% group="サーボモータ"
     //% weight=100 color=#ff8c00 icon="\uf085"
     //% degrees.min=-90 degrees.max=90
@@ -157,13 +157,13 @@ namespace THK {
         degrees = -degrees //反転（時計周りを＋にするため)
 
         switch (Servo) {
-            case 0x08: //モータ1
+            case 0x08: //SV1
                 degrees += Motor_OriginAdj[0]
                 break;
-            case 0x0C:
+            case 0x0C: //SV2
                 degrees += Motor_OriginAdj[1]
                 break;
-            case 0x10:
+            case 0x10: //SV3
                 degrees += Motor_OriginAdj[2]
                 break;
             default:
@@ -203,7 +203,7 @@ namespace THK {
     }
 
     //% blockId=Kitronik_servo_OriginAdj
-    //% block="%Servo|の原点を %degrees|度ずらす"
+    //% block="モータ %Servo|の原点を %degrees|度ずらす"
     //% group="サーボモータ"
     //% weight=100 color=#d2691e icon="\uf085"
     //% degrees.min=-20 degrees.max=20
@@ -227,13 +227,13 @@ namespace THK {
         }
 
         switch (Servo) {
-            case 0x08: //モータ1
+            case 0x08: //SV1
                 Motor_OriginAdj[0]= degrees 
                 break;
-            case 0x0C:
+            case 0x0C: //SV2
                 Motor_OriginAdj[1] = degrees
                 break;
-            case 0x10:
+            case 0x10: //SV3
                 Motor_OriginAdj[2] = degrees
                 break;
             default:
